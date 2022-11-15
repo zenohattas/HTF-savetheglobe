@@ -1,12 +1,10 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 
-export default function Editproject() {
+export default function Addproject() {
 
-  let navigate=useNavigate();
-
-  const {id} = useParams();
+  let navigate=useNavigate()
 
   const [project, setproject] = useState({
     projectType: "",
@@ -15,46 +13,36 @@ export default function Editproject() {
     supporters: ""
   });
 
-  const { name, projectname, email } = project
+  const { projectType, projectname, amount } = project
 
   const onInputChange = (e) => {
     setproject({ ...project, [e.target.name]: e.target.value })
   }
 
-  useEffect(()=>{
-    loadproject();
-
-  }, []);
-
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:8080/project/${id}`, project);
+    await axios.post("http://localhost:8080/project", project);
     navigate("/");
 
-  }
-
-  const loadproject = async ()=>{
-    const result = await axios.get(`http://localhost:8080/project/${id}`) 
-    setproject(result.data);
   }
 
   return (
     <div className='container'>
       <div className='row'>
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
-          <h2 className='text-center m-4'>Edit project</h2>
+          <h2 className='text-center m-4'>Register project</h2>
 
           <form onSubmit={(e)=> onSubmit(e)}>
             <div className='mb-3'>
-              <label htmlFor='Name' className='form-label'>
-                Name
+              <label htmlFor='projectType' className='form-label'>
+                Soort Project
               </label>
               <input
                 type={"text"}
                 className="form-control"
-                placeholder='Enter your name'
-                name='name'
-                value={name}
+                placeholder='bv. bomen, planten, etc'
+                name='projectType'
+                value={projectType}
                 onChange={(e) => onInputChange(e)} />
             </div>
 
@@ -72,15 +60,15 @@ export default function Editproject() {
             </div>
 
             <div className='mb-3'>
-              <label htmlFor='Email' className='form-label'>
-                E-mail
+              <label htmlFor='amount' className='form-label'>
+                amount
               </label>
               <input
                 type={"text"}
                 className="form-control"
-                placeholder='Enter your e-mail address'
-                name='email'
-                value={email}
+                placeholder='Enter the amount you want to add'
+                name='amount'
+                value={amount}
                 onChange={(e) => onInputChange(e)} />
             </div>
             <button type='sumbit' className='btn btn-outline-primary'>Submit</button>

@@ -9,6 +9,7 @@ export default function AddprojectContribution() {
   const [projectContribution, setprojectContribution] = useState({
     place: "",
     contribution: "",
+    user:"",
     location: "",
     carbonSaved: ""
   });
@@ -21,7 +22,7 @@ export default function AddprojectContribution() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:8080/user", user);
+    await axios.post("http://localhost:8080/projectcontribution", projectContribution);
     navigate("/");
 
   }
