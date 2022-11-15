@@ -46,9 +46,9 @@ export default function ViewProjects() {
                                     <td>{projectcontribution.project.description}</td>
                                     <td>{projectcontribution.amountContributed}</td>
                                     <td>
-                                        <Link className="btn btn-primary mx-2" to={`/viewproject/${project.id}`}>View</Link>
-                                        <Link className="btn btn-outline-primary mx-2" to={`/editproject/${project.id}`}>Edit</Link>
-                                        <button className="btn btn-danger mx-2" onClick={() => deleteProject(project.id)}>Delete</button>
+                                        <Link className="btn btn-primary mx-2" to={`/viewproject/${projectcontribution.id}`}>View</Link>
+                                        <Link className="btn btn-outline-primary mx-2" to={`/editproject/${projectcontribution.id}`}>Edit</Link>
+                                        <button className="btn btn-danger mx-2" onClick={() => deleteProject(projectcontribution.id)}>Delete</button>
                                     </td>
                                 </tr>
                             ))

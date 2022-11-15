@@ -13,8 +13,17 @@ public class Project {
     private String descirtionShort;
     private String descriptionLong;
     private String picturePath;
+    private String projectName;
     @OneToMany
     private List<Location> location;
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
 
     public List<Location> getLocation() {
         return location;

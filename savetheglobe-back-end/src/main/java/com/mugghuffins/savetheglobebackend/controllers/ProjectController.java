@@ -43,6 +43,7 @@ public class ProjectController {
                     project.setDescriptionLong(newProject.getDescriptionLong());
                     project.setPicturePath(newProject.getPicturePath());
                     project.setLocation(newProject.getLocation());
+                    project.setProjectName(newProject.getProjectName());
                     return projectRepository.save(project);
                 }).orElseThrow(() -> new ProjectNotFoundException((id)));
     }

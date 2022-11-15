@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Addproject from './pages/Project/AddProject';
 import Editproject from './pages/Project/EditProject';
 import ViewProject from './pages/Project/ViewProject';
+import ViewProjects from './pages/Project/ViewProjects';
 import Slide from './components/Slider';
 import Sections from './components/Sections';
 import background from "./Images/background.jpg";
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/adduser" element={<Addproject/>}/>
           <Route exact path="/editproject/:id" element={<Editproject/>}/>
           <Route exact path="/viewproject/:id" element={<ViewProject/>}/>
+          <Route exact path="/viewprojects" element={<ViewProjects/>}/>
           <Route exact path="/profile" element={<Profile/>}/>
           {/* <Profile/> */}
         </Routes>

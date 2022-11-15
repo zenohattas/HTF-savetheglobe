@@ -65,12 +65,12 @@ export default function Editproject() {
                   aria-expanded="false"
                   value={project}
                   placeholder="Choose you project">
-
+                    Select project
                 </button>
                 <ul class="dropdown-menu">
                   {
-                    projectList.projects.map((project, index) => (
-                      <li><a class="dropdown-item" href="#" onClick={(e) => onInputChange(e)}>{project.projectname}</a></li>
+                    projectList.projects.map((projectList, index) => (
+                      <li><a class="dropdown-item" href="#" onClick={(e) => onInputChange(e)}>{projectList.projects[index]}</a></li>
                     ))
                   }
                 </ul>
@@ -92,7 +92,7 @@ export default function Editproject() {
             </div>
 
             <button type='sumbit' className='btn btn-outline-primary'>Submit</button>
-            <Link className='btn btn-outline-danger mx-2' to="/">Cancel</Link>
+            <Link className='btn btn-outline-danger mx-2' to="/ViewProjects">Cancel</Link>
           </form>
         </div>
       </div >
