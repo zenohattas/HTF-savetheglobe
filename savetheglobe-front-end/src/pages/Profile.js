@@ -16,9 +16,15 @@ const Profile = () => {
   return (
     isAuthenticated && (
       <div>
-        <img src={user.picture} alt={user.name} />
+        <img style={{margin: "25px"}} src={user.picture} alt={user.name} />
         <h2>{user.name}</h2>
         <p>{user.email}</p>
+        <hr></hr>
+        <h4>Since you joined you've planted 3 trees</h4>
+        {/* <h2>Since you joined you've planted {Project.amount} trees</h2> */}
+        <img style={{width: "30px", height: "30px"}} src="https://cdn-icons-png.flaticon.com/512/7963/7963920.png"></img>
+        <img style={{width: "30px", height: "30px"}}src="https://cdn-icons-png.flaticon.com/512/7963/7963920.png"></img>
+        <img style={{width: "30px", height: "30px"}} src="https://cdn-icons-png.flaticon.com/512/7963/7963920.png"></img>
       </div>
     )
   );

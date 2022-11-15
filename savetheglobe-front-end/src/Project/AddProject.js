@@ -60,15 +60,28 @@ export default function Addproject() {
             </div>
 
             <div className='mb-3'>
-              <label htmlFor='amount' className='form-label'>
-                amount
+              <label htmlFor='description' className='form-label'>
+                description
               </label>
               <input
                 type={"text"}
                 className="form-control"
-                placeholder='Enter the amount you want to add'
-                name='amount'
-                value={amount}
+                placeholder='Enter a description'
+                name='description'
+                value={description}
+                onChange={(e) => onInputChange(e)} />
+            </div>
+
+            <div className='mb-3'>
+              <label htmlFor='supporters' className='form-label'>
+              supporters
+              </label>
+              <input
+                type={"text"}
+                className="form-control"
+                placeholder='Enter a supporter'
+                name='supporters'
+                value={supporters}
                 onChange={(e) => onInputChange(e)} />
             </div>
             <button type='sumbit' className='btn btn-outline-primary'>Submit</button>

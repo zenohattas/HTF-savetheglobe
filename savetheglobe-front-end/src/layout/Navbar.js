@@ -24,9 +24,12 @@ export default function Navbar() {
     <div className="collapse navbar-collapse d-sm-inline-flex justify-content-between" id="navbarNavDarkDropdown">
       <ul className="navbar-nav flex-grow-1">
       <li className="nav-item">
-        <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+        <Link className="nav-link active" aria-current="page" to="/home">Home</Link>
       </li>
-        <li className="nav-item dropdown">
+      <li className="nav-item">
+        <Link className="nav-link active" to="/viewprojects">View Projects</Link>
+      </li>
+        {/* <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Projects
           </a>
@@ -34,9 +37,12 @@ export default function Navbar() {
             <li><Link className="dropdown-item" to="/viewproject">Project</Link></li>
             <li><a className="dropdown-item" href="#">projectContribution</a></li>
           </ul>
-        </li>
+        </li> */}
         <li className="nav-item">
         <Link className="nav-link active" to="/profile">Profile</Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link active" to="/addproject">Add Project</Link>
       </li>
         </ul>
         <ul className="nav navbar-nav navbar-right">
