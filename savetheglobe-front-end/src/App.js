@@ -7,40 +7,29 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Addproject from './Project/AddProject';
 import Editproject from './Project/EditProject';
 import ViewProject from './Project/ViewProject';
-import { useEffect, useState } from 'react';
+import Slide from './components/Slider';
+import Sections from './components/Sections';
+import background from "./Images/background.jpg";
 
 function App() {
-  const [offsetY, setOffsetY] = useState(0);
-  const handleScroll = () => setOffsetY(window.pageYOffset);
-
-  useEffect(()=> {
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);  
-  }, []);
-
-  const renderContent = () => (
-    <>
+  return (
+    <div className="App" >
       <Router>
         <Navbar/>
-        
+        <div style={{ backgroundImage: `url(${background})`, height: "720px", background: "30%"}}>
         <Routes>
           <Route exact path="/" element={<Home/>}/>
+          {/* <Route exact path="/" element={<Slide/>}/> */}
+          {/* <Sections/> */}
           <Route exact path="/adduser" element={<Addproject/>}/>
           <Route exact path="/editproject/:id" element={<Editproject/>}/>
           <Route exact path="/viewproject/:id" element={<ViewProject/>}/>
           <Route exact path="/profile" element={<Profile/>}/>
           {/* <Profile/> */}
         </Routes>
+        </div>
       </Router>
-    </>
-  );
-
-  return (
-    <section className="Parallax">
-    <div className="Parallax__background" style={{ transform: `translateY(-${offsetY * 0.5}px)` }}/>
-    <div className="Parallax__content">{renderContent()}</div>     
-    </section>
+    </div>
   );
 }
 
