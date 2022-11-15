@@ -18,6 +18,7 @@ root.render(
   </React.StrictMode>
 );
 
+reportWebVitals();
 // ReactDOM.render(
 //   <Auth0Provider
 //   domain="dev-iv2wvcfy528etoco.us.auth0.com"
@@ -32,4 +33,4 @@ root.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
